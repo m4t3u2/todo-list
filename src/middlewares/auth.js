@@ -1,10 +1,10 @@
 const AuthError = require("../entities/error/authError");
 
-function authenticate(req, res, next) {
+async function authenticate(req, res, next) {
   const headers = req.headers;
 
   if (!(headers["api-key"] && headers["api-key"] == "123456789")) {
-    throw new AuthError("Chave de API inválida!");
+    throw new AuthError("Invalid API key!");
   }
 
   next();

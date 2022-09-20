@@ -1,4 +1,4 @@
-function error(err, req, res, next) {
+async function error(err, req, res, next) {
   let code = 500;
 
   if (err.code) {
